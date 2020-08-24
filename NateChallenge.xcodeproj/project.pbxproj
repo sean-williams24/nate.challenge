@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEFB0AE224F3E0B200A00E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */; };
+		CEFB0AE424F3E0B200A00E84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */; };
+		CEFB0AE624F3E0B200A00E84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE524F3E0B200A00E84 /* ViewController.swift */; };
+		CEFB0AE924F3E0B200A00E84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFB0AE724F3E0B200A00E84 /* Main.storyboard */; };
+		CEFB0AEB24F3E0B600A00E84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFB0AEA24F3E0B600A00E84 /* Assets.xcassets */; };
+		CEFB0AEE24F3E0B600A00E84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFB0AEC24F3E0B600A00E84 /* LaunchScreen.storyboard */; };
+		CEFB0AF924F3E0B600A00E84 /* NateChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AF824F3E0B600A00E84 /* NateChallengeTests.swift */; };
+		CEFB0B0424F3E0B600A00E84 /* NateChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0B0324F3E0B600A00E84 /* NateChallengeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEFB0AF524F3E0B600A00E84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEFB0AD624F3E0B200A00E84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEFB0ADD24F3E0B200A00E84;
+			remoteInfo = NateChallenge;
+		};
+		CEFB0B0024F3E0B600A00E84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEFB0AD624F3E0B200A00E84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEFB0ADD24F3E0B200A00E84;
+			remoteInfo = NateChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CEFB0ADE24F3E0B200A00E84 /* NateChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NateChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CEFB0AE524F3E0B200A00E84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEFB0AE824F3E0B200A00E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEFB0AEA24F3E0B600A00E84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEFB0AED24F3E0B600A00E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CEFB0AEF24F3E0B600A00E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEFB0AF424F3E0B600A00E84 /* NateChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NateChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEFB0AF824F3E0B600A00E84 /* NateChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NateChallengeTests.swift; sourceTree = "<group>"; };
+		CEFB0AFA24F3E0B600A00E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEFB0AFF24F3E0B600A00E84 /* NateChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NateChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEFB0B0324F3E0B600A00E84 /* NateChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NateChallengeUITests.swift; sourceTree = "<group>"; };
+		CEFB0B0524F3E0B600A00E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEFB0ADB24F3E0B200A00E84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFB0AF124F3E0B600A00E84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFB0AFC24F3E0B600A00E84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEFB0AD524F3E0B200A00E84 = {
+			isa = PBXGroup;
+			children = (
+				CEFB0AE024F3E0B200A00E84 /* NateChallenge */,
+				CEFB0AF724F3E0B600A00E84 /* NateChallengeTests */,
+				CEFB0B0224F3E0B600A00E84 /* NateChallengeUITests */,
+				CEFB0ADF24F3E0B200A00E84 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEFB0ADF24F3E0B200A00E84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEFB0ADE24F3E0B200A00E84 /* NateChallenge.app */,
+				CEFB0AF424F3E0B600A00E84 /* NateChallengeTests.xctest */,
+				CEFB0AFF24F3E0B600A00E84 /* NateChallengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEFB0AE024F3E0B200A00E84 /* NateChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */,
+				CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */,
+				CEFB0AE524F3E0B200A00E84 /* ViewController.swift */,
+				CEFB0AE724F3E0B200A00E84 /* Main.storyboard */,
+				CEFB0AEA24F3E0B600A00E84 /* Assets.xcassets */,
+				CEFB0AEC24F3E0B600A00E84 /* LaunchScreen.storyboard */,
+				CEFB0AEF24F3E0B600A00E84 /* Info.plist */,
+			);
+			path = NateChallenge;
+			sourceTree = "<group>";
+		};
+		CEFB0AF724F3E0B600A00E84 /* NateChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEFB0AF824F3E0B600A00E84 /* NateChallengeTests.swift */,
+				CEFB0AFA24F3E0B600A00E84 /* Info.plist */,
+			);
+			path = NateChallengeTests;
+			sourceTree = "<group>";
+		};
+		CEFB0B0224F3E0B600A00E84 /* NateChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CEFB0B0324F3E0B600A00E84 /* NateChallengeUITests.swift */,
+				CEFB0B0524F3E0B600A00E84 /* Info.plist */,
+			);
+			path = NateChallengeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEFB0ADD24F3E0B200A00E84 /* NateChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEFB0B0824F3E0B600A00E84 /* Build configuration list for PBXNativeTarget "NateChallenge" */;
+			buildPhases = (
+				CEFB0ADA24F3E0B200A00E84 /* Sources */,
+				CEFB0ADB24F3E0B200A00E84 /* Frameworks */,
+				CEFB0ADC24F3E0B200A00E84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NateChallenge;
+			productName = NateChallenge;
+			productReference = CEFB0ADE24F3E0B200A00E84 /* NateChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEFB0AF324F3E0B600A00E84 /* NateChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEFB0B0B24F3E0B600A00E84 /* Build configuration list for PBXNativeTarget "NateChallengeTests" */;
+			buildPhases = (
+				CEFB0AF024F3E0B600A00E84 /* Sources */,
+				CEFB0AF124F3E0B600A00E84 /* Frameworks */,
+				CEFB0AF224F3E0B600A00E84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEFB0AF624F3E0B600A00E84 /* PBXTargetDependency */,
+			);
+			name = NateChallengeTests;
+			productName = NateChallengeTests;
+			productReference = CEFB0AF424F3E0B600A00E84 /* NateChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CEFB0AFE24F3E0B600A00E84 /* NateChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEFB0B0E24F3E0B600A00E84 /* Build configuration list for PBXNativeTarget "NateChallengeUITests" */;
+			buildPhases = (
+				CEFB0AFB24F3E0B600A00E84 /* Sources */,
+				CEFB0AFC24F3E0B600A00E84 /* Frameworks */,
+				CEFB0AFD24F3E0B600A00E84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEFB0B0124F3E0B600A00E84 /* PBXTargetDependency */,
+			);
+			name = NateChallengeUITests;
+			productName = NateChallengeUITests;
+			productReference = CEFB0AFF24F3E0B600A00E84 /* NateChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEFB0AD624F3E0B200A00E84 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Sean Williams";
+				TargetAttributes = {
+					CEFB0ADD24F3E0B200A00E84 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					CEFB0AF324F3E0B600A00E84 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = CEFB0ADD24F3E0B200A00E84;
+					};
+					CEFB0AFE24F3E0B600A00E84 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = CEFB0ADD24F3E0B200A00E84;
+					};
+				};
+			};
+			buildConfigurationList = CEFB0AD924F3E0B200A00E84 /* Build configuration list for PBXProject "NateChallenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEFB0AD524F3E0B200A00E84;
+			productRefGroup = CEFB0ADF24F3E0B200A00E84 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEFB0ADD24F3E0B200A00E84 /* NateChallenge */,
+				CEFB0AF324F3E0B600A00E84 /* NateChallengeTests */,
+				CEFB0AFE24F3E0B600A00E84 /* NateChallengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEFB0ADC24F3E0B200A00E84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFB0AEE24F3E0B600A00E84 /* LaunchScreen.storyboard in Resources */,
+				CEFB0AEB24F3E0B600A00E84 /* Assets.xcassets in Resources */,
+				CEFB0AE924F3E0B200A00E84 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFB0AF224F3E0B600A00E84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFB0AFD24F3E0B600A00E84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEFB0ADA24F3E0B200A00E84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFB0AE624F3E0B200A00E84 /* ViewController.swift in Sources */,
+				CEFB0AE224F3E0B200A00E84 /* AppDelegate.swift in Sources */,
+				CEFB0AE424F3E0B200A00E84 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFB0AF024F3E0B600A00E84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFB0AF924F3E0B600A00E84 /* NateChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFB0AFB24F3E0B600A00E84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFB0B0424F3E0B600A00E84 /* NateChallengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEFB0AF624F3E0B600A00E84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEFB0ADD24F3E0B200A00E84 /* NateChallenge */;
+			targetProxy = CEFB0AF524F3E0B600A00E84 /* PBXContainerItemProxy */;
+		};
+		CEFB0B0124F3E0B600A00E84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEFB0ADD24F3E0B200A00E84 /* NateChallenge */;
+			targetProxy = CEFB0B0024F3E0B600A00E84 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CEFB0AE724F3E0B200A00E84 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEFB0AE824F3E0B200A00E84 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CEFB0AEC24F3E0B600A00E84 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEFB0AED24F3E0B600A00E84 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEFB0B0624F3E0B600A00E84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEFB0B0724F3E0B600A00E84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEFB0B0924F3E0B600A00E84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = NateChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.NateChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEFB0B0A24F3E0B600A00E84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = NateChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.NateChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEFB0B0C24F3E0B600A00E84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = NateChallengeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.NateChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NateChallenge.app/NateChallenge";
+			};
+			name = Debug;
+		};
+		CEFB0B0D24F3E0B600A00E84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = NateChallengeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.NateChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NateChallenge.app/NateChallenge";
+			};
+			name = Release;
+		};
+		CEFB0B0F24F3E0B600A00E84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = NateChallengeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.NateChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NateChallenge;
+			};
+			name = Debug;
+		};
+		CEFB0B1024F3E0B600A00E84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = NateChallengeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.NateChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NateChallenge;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEFB0AD924F3E0B200A00E84 /* Build configuration list for PBXProject "NateChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEFB0B0624F3E0B600A00E84 /* Debug */,
+				CEFB0B0724F3E0B600A00E84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEFB0B0824F3E0B600A00E84 /* Build configuration list for PBXNativeTarget "NateChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEFB0B0924F3E0B600A00E84 /* Debug */,
+				CEFB0B0A24F3E0B600A00E84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEFB0B0B24F3E0B600A00E84 /* Build configuration list for PBXNativeTarget "NateChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEFB0B0C24F3E0B600A00E84 /* Debug */,
+				CEFB0B0D24F3E0B600A00E84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEFB0B0E24F3E0B600A00E84 /* Build configuration list for PBXNativeTarget "NateChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEFB0B0F24F3E0B600A00E84 /* Debug */,
+				CEFB0B1024F3E0B600A00E84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEFB0AD624F3E0B200A00E84 /* Project object */;
+}
