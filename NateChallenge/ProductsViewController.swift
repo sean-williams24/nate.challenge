@@ -6,6 +6,7 @@
 //  Copyright © 2020 Sean Williams. All rights reserved.
 //
 
+import Kingfisher
 import UIKit
 
 class ProductsViewController: UIViewController {
@@ -83,25 +84,44 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "product cell", for: indexPath) as! ProductCollectionViewCell
         let product = products[indexPath.row]
         
-        cell.titleLabel.text = product.title
+        var heading = product.merchant == "" ? product.title : product.merchant
         
+        if heading.hasPrefix("www.") { heading.removeFirst(4) }
+        if heading.hasSuffix(".com") { heading.removeLast(4)}
+        cell.titleLabel.text = heading
+
+        // Download, set and cache image
         if product.images != [] {
-            if let url = URL(string: product.images[0]) {
-                
-                
-                
-                if let imageData = try? Data(contentsOf: url) {
-                    cell.imageView.image = UIImage(data: imageData)
+            let processor = DownsamplingImageProcessor(size: CGSize(width: 100, height: 100))
+            
+            cell.imageView.kf.setImage(
+                with: URL(string: product.images[0]),
+                placeholder: UIImage(named: "nate"),
+                options: [
+                    .processor(processor),
+                    .transition(.fade(0.4)),
+                    .scaleFactor(UIScreen.main.scale),
+                    .cacheOriginalImage
+                ])
+            {
+                result in
+                switch result {
+                case .success:
+                    cell.imageView.contentMode = .scaleAspectFit
+                    print("Success")
+                case .failure(let error):
+                    print("Job failed: \(error.localizedDescription)")
                 }
             }
+        } else {
+            cell.imageView.image = UIImage(named: "nate")
         }
-
-
-        
         return cell
     }
 }
 
+
+// MARK: - Collection View Flow Layout Delegates
 
 extension ProductsViewController: UICollectionViewDelegateFlowLayout {
     
