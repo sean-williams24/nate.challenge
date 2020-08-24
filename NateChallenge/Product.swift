@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct Posts: Codable {
+    let posts: [Product]
+}
+
 struct Product: Codable {
     let title: String
     let merchant: String

@@ -16,7 +16,16 @@ class ViewController: UIViewController {
         let baseURL = URL(string: "http://192.168.0.14:3000/products")
         var request = URLRequest(url: baseURL!)
         request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.httpBody = """
+//        {
+//            "where": {
+//                "title": {
+//                    "contains": ""
+//                }
+//            }
+//        }
+//        """.data(using: .utf8)
 
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -28,8 +37,11 @@ class ViewController: UIViewController {
             let decoder = JSONDecoder()
             
             do {
-                let result = try decoder.decode([Product].self, from: data!)
-                print(result)
+                let result = try decoder.decode(Posts.self, from: data!)
+                for prod in result.posts {
+                    print(prod)
+                }
+                
             } catch {
                 print(error.localizedDescription as Any)
             }
