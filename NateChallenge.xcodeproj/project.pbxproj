@@ -15,6 +15,7 @@
 		CEFB0AEE24F3E0B600A00E84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFB0AEC24F3E0B600A00E84 /* LaunchScreen.storyboard */; };
 		CEFB0AF924F3E0B600A00E84 /* NateChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AF824F3E0B600A00E84 /* NateChallengeTests.swift */; };
 		CEFB0B0424F3E0B600A00E84 /* NateChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0B0324F3E0B600A00E84 /* NateChallengeUITests.swift */; };
+		CEFB0B1224F3E96400A00E84 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0B1124F3E96400A00E84 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CEFB0AFF24F3E0B600A00E84 /* NateChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NateChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFB0B0324F3E0B600A00E84 /* NateChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NateChallengeUITests.swift; sourceTree = "<group>"; };
 		CEFB0B0524F3E0B600A00E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEFB0B1124F3E96400A00E84 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				CEFB0AEA24F3E0B600A00E84 /* Assets.xcassets */,
 				CEFB0AEC24F3E0B600A00E84 /* LaunchScreen.storyboard */,
 				CEFB0AEF24F3E0B600A00E84 /* Info.plist */,
+				CEFB0B1124F3E96400A00E84 /* Product.swift */,
 			);
 			path = NateChallenge;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEFB0AE624F3E0B200A00E84 /* ViewController.swift in Sources */,
+				CEFB0B1224F3E96400A00E84 /* Product.swift in Sources */,
 				CEFB0AE224F3E0B200A00E84 /* AppDelegate.swift in Sources */,
 				CEFB0AE424F3E0B200A00E84 /* SceneDelegate.swift in Sources */,
 			);
