@@ -8,7 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ProductsViewController: UIViewController {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    // MARK: - Properties
+
+    var products: [Product] = []
+    
+    
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +50,10 @@ class ViewController: UIViewController {
             
             do {
                 let result = try decoder.decode(Posts.self, from: data!)
-                for prod in result.posts {
-                    print(prod)
+                self.products = result.posts
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
                 }
                 
             } catch {
@@ -51,7 +65,25 @@ class ViewController: UIViewController {
         
         
     }
-
     
 }
 
+
+// MARK: - Collection View Data Source
+
+extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return products.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "product cell", for: indexPath) as! ProductCollectionViewCell
+        let product = products[indexPath.row]
+        
+        cell.titleLabel.text = product.title
+        
+        return cell
+    }
+    
+}

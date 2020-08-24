@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		CEFB0AE224F3E0B200A00E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */; };
 		CEFB0AE424F3E0B200A00E84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */; };
-		CEFB0AE624F3E0B200A00E84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE524F3E0B200A00E84 /* ViewController.swift */; };
+		CEFB0AE624F3E0B200A00E84 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE524F3E0B200A00E84 /* ProductsViewController.swift */; };
 		CEFB0AE924F3E0B200A00E84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFB0AE724F3E0B200A00E84 /* Main.storyboard */; };
 		CEFB0AEB24F3E0B600A00E84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFB0AEA24F3E0B600A00E84 /* Assets.xcassets */; };
 		CEFB0AEE24F3E0B600A00E84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFB0AEC24F3E0B600A00E84 /* LaunchScreen.storyboard */; };
 		CEFB0AF924F3E0B600A00E84 /* NateChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AF824F3E0B600A00E84 /* NateChallengeTests.swift */; };
 		CEFB0B0424F3E0B600A00E84 /* NateChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0B0324F3E0B600A00E84 /* NateChallengeUITests.swift */; };
 		CEFB0B1224F3E96400A00E84 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0B1124F3E96400A00E84 /* Product.swift */; };
+		CEFB0B1424F40EB900A00E84 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0B1324F40EB900A00E84 /* ProductCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		CEFB0ADE24F3E0B200A00E84 /* NateChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NateChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEFB0AE524F3E0B200A00E84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEFB0AE524F3E0B200A00E84 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		CEFB0AE824F3E0B200A00E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEFB0AEA24F3E0B600A00E84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEFB0AED24F3E0B600A00E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		CEFB0B0324F3E0B600A00E84 /* NateChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NateChallengeUITests.swift; sourceTree = "<group>"; };
 		CEFB0B0524F3E0B600A00E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEFB0B1124F3E96400A00E84 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		CEFB0B1324F40EB900A00E84 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +105,13 @@
 			children = (
 				CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */,
 				CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */,
-				CEFB0AE524F3E0B200A00E84 /* ViewController.swift */,
+				CEFB0AE524F3E0B200A00E84 /* ProductsViewController.swift */,
 				CEFB0AE724F3E0B200A00E84 /* Main.storyboard */,
 				CEFB0AEA24F3E0B600A00E84 /* Assets.xcassets */,
 				CEFB0AEC24F3E0B600A00E84 /* LaunchScreen.storyboard */,
 				CEFB0AEF24F3E0B600A00E84 /* Info.plist */,
 				CEFB0B1124F3E96400A00E84 /* Product.swift */,
+				CEFB0B1324F40EB900A00E84 /* ProductCollectionViewCell.swift */,
 			);
 			path = NateChallenge;
 			sourceTree = "<group>";
@@ -262,8 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEFB0AE624F3E0B200A00E84 /* ViewController.swift in Sources */,
+				CEFB0AE624F3E0B200A00E84 /* ProductsViewController.swift in Sources */,
 				CEFB0B1224F3E96400A00E84 /* Product.swift in Sources */,
+				CEFB0B1424F40EB900A00E84 /* ProductCollectionViewCell.swift in Sources */,
 				CEFB0AE224F3E0B200A00E84 /* AppDelegate.swift in Sources */,
 				CEFB0AE424F3E0B200A00E84 /* SceneDelegate.swift in Sources */,
 			);
