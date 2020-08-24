@@ -18,6 +18,8 @@ class ProductsViewController: UIViewController {
     // MARK: - Properties
 
     var products: [Product] = []
+    let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
+    let itemsPerRow: CGFloat = 2.0
     
     
     // MARK: - Life Cycle
@@ -83,7 +85,39 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
         
         cell.titleLabel.text = product.title
         
+        if product.images != [] {
+            if let url = URL(string: product.images[0]) {
+                
+                
+                
+                if let imageData = try? Data(contentsOf: url) {
+                    cell.imageView.image = UIImage(data: imageData)
+                }
+            }
+        }
+
+
+        
         return cell
     }
+}
+
+
+extension ProductsViewController: UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
+    }
 }
