@@ -10,6 +10,7 @@
 		6E0B7219BD70A8B06F6F5FE0 /* Pods_NateChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83908C355D50E32DE577457 /* Pods_NateChallengeTests.framework */; };
 		749AAD82F1EF6C841ADF66E3 /* Pods_NateChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2D2B0D67DA4E46AC667C6D /* Pods_NateChallenge.framework */; };
 		CE7641C424F4FF6600560FEA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7641C324F4FF6600560FEA /* DetailViewController.swift */; };
+		CE7641C924F5136C00560FEA /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7641C824F5136C00560FEA /* ImageCollectionViewCell.swift */; };
 		CEFB0AE224F3E0B200A00E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */; };
 		CEFB0AE424F3E0B200A00E84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */; };
 		CEFB0AE624F3E0B200A00E84 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE524F3E0B200A00E84 /* ProductsViewController.swift */; };
@@ -50,6 +51,7 @@
 		B094C81C66363A709875CD7B /* Pods-NateChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NateChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-NateChallengeTests/Pods-NateChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		B83908C355D50E32DE577457 /* Pods_NateChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NateChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7641C324F4FF6600560FEA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CE7641C824F5136C00560FEA /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEFB0ADE24F3E0B200A00E84 /* NateChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NateChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				CEFB0B1324F40EB900A00E84 /* ProductCollectionViewCell.swift */,
+				CE7641C824F5136C00560FEA /* ImageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				CEFB0AE624F3E0B200A00E84 /* ProductsViewController.swift in Sources */,
 				CEFB0B1224F3E96400A00E84 /* Product.swift in Sources */,
 				CEFB0B1424F40EB900A00E84 /* ProductCollectionViewCell.swift in Sources */,
+				CE7641C924F5136C00560FEA /* ImageCollectionViewCell.swift in Sources */,
 				CE7641C424F4FF6600560FEA /* DetailViewController.swift in Sources */,
 				CEFB0AE224F3E0B200A00E84 /* AppDelegate.swift in Sources */,
 				CEFB0AE424F3E0B200A00E84 /* SceneDelegate.swift in Sources */,
