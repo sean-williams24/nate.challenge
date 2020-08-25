@@ -21,6 +21,7 @@ class ProductsViewController: UIViewController {
     var products: [Product] = []
     let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
     let itemsPerRow: CGFloat = 2.0
+    var product: Product!
     
     
     // MARK: - Life Cycle
@@ -68,6 +69,14 @@ class ProductsViewController: UIViewController {
         
         
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! DetailViewController
+        vc.product = product
+    }
+
     
 }
 
@@ -117,6 +126,11 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
             cell.imageView.image = UIImage(named: "nate")
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        product = products[indexPath.row]
+        performSegue(withIdentifier: "showDetail", sender: self)
     }
 }
 

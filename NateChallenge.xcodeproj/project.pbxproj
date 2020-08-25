@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6E0B7219BD70A8B06F6F5FE0 /* Pods_NateChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83908C355D50E32DE577457 /* Pods_NateChallengeTests.framework */; };
 		749AAD82F1EF6C841ADF66E3 /* Pods_NateChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2D2B0D67DA4E46AC667C6D /* Pods_NateChallenge.framework */; };
+		CE7641C424F4FF6600560FEA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7641C324F4FF6600560FEA /* DetailViewController.swift */; };
 		CEFB0AE224F3E0B200A00E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */; };
 		CEFB0AE424F3E0B200A00E84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */; };
 		CEFB0AE624F3E0B200A00E84 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE524F3E0B200A00E84 /* ProductsViewController.swift */; };
@@ -48,6 +49,7 @@
 		AD2D2B0D67DA4E46AC667C6D /* Pods_NateChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NateChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B094C81C66363A709875CD7B /* Pods-NateChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NateChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-NateChallengeTests/Pods-NateChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		B83908C355D50E32DE577457 /* Pods_NateChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NateChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7641C324F4FF6600560FEA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEFB0ADE24F3E0B200A00E84 /* NateChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NateChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,8 +117,32 @@
 				4C31FA2BDA87D1FF1CB6BB6D /* Pods-NateChallengeTests.debug.xcconfig */,
 				B094C81C66363A709875CD7B /* Pods-NateChallengeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE7641C524F4FF7400560FEA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEFB0AE524F3E0B200A00E84 /* ProductsViewController.swift */,
+				CE7641C324F4FF6600560FEA /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE7641C624F4FF8200560FEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEFB0B1124F3E96400A00E84 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE7641C724F4FFA100560FEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEFB0B1324F40EB900A00E84 /* ProductCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CEFB0AD524F3E0B200A00E84 = {
@@ -146,13 +172,13 @@
 			children = (
 				CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */,
 				CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */,
-				CEFB0AE524F3E0B200A00E84 /* ProductsViewController.swift */,
+				CE7641C624F4FF8200560FEA /* Model */,
+				CE7641C724F4FFA100560FEA /* View */,
+				CE7641C524F4FF7400560FEA /* Controllers */,
 				CEFB0AE724F3E0B200A00E84 /* Main.storyboard */,
 				CEFB0AEA24F3E0B600A00E84 /* Assets.xcassets */,
 				CEFB0AEC24F3E0B600A00E84 /* LaunchScreen.storyboard */,
 				CEFB0AEF24F3E0B600A00E84 /* Info.plist */,
-				CEFB0B1124F3E96400A00E84 /* Product.swift */,
-				CEFB0B1324F40EB900A00E84 /* ProductCollectionViewCell.swift */,
 			);
 			path = NateChallenge;
 			sourceTree = "<group>";
@@ -417,6 +443,7 @@
 				CEFB0AE624F3E0B200A00E84 /* ProductsViewController.swift in Sources */,
 				CEFB0B1224F3E96400A00E84 /* Product.swift in Sources */,
 				CEFB0B1424F40EB900A00E84 /* ProductCollectionViewCell.swift in Sources */,
+				CE7641C424F4FF6600560FEA /* DetailViewController.swift in Sources */,
 				CEFB0AE224F3E0B200A00E84 /* AppDelegate.swift in Sources */,
 				CEFB0AE424F3E0B200A00E84 /* SceneDelegate.swift in Sources */,
 			);
