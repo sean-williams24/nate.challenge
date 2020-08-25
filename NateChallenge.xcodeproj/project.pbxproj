@@ -12,6 +12,7 @@
 		CE7641C424F4FF6600560FEA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7641C324F4FF6600560FEA /* DetailViewController.swift */; };
 		CE7641C924F5136C00560FEA /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7641C824F5136C00560FEA /* ImageCollectionViewCell.swift */; };
 		CE7641CB24F54D1000560FEA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7641CA24F54D1000560FEA /* NetworkClient.swift */; };
+		CE7641CE24F5736600560FEA /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7641CD24F5736600560FEA /* AddProductViewController.swift */; };
 		CEFB0AE224F3E0B200A00E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */; };
 		CEFB0AE424F3E0B200A00E84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */; };
 		CEFB0AE624F3E0B200A00E84 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0AE524F3E0B200A00E84 /* ProductsViewController.swift */; };
@@ -54,6 +55,7 @@
 		CE7641C324F4FF6600560FEA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CE7641C824F5136C00560FEA /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE7641CA24F54D1000560FEA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		CE7641CD24F5736600560FEA /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		CEFB0ADE24F3E0B200A00E84 /* NateChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NateChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFB0AE124F3E0B200A00E84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEFB0AE324F3E0B200A00E84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				CEFB0AE524F3E0B200A00E84 /* ProductsViewController.swift */,
 				CE7641C324F4FF6600560FEA /* DetailViewController.swift */,
+				CE7641CD24F5736600560FEA /* AddProductViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				CEFB0AE224F3E0B200A00E84 /* AppDelegate.swift in Sources */,
 				CEFB0AE424F3E0B200A00E84 /* SceneDelegate.swift in Sources */,
 				CE7641CB24F54D1000560FEA /* NetworkClient.swift in Sources */,
+				CE7641CE24F5736600560FEA /* AddProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -77,6 +77,7 @@
                                         <color key="tintColor" red="0.67526610659999997" green="0.2331447005" blue="0.60787641999999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="addProductTapped:" destination="BYZ-38-t0r" id="MFb-Aj-Yyr"/>
+                                            <segue destination="lj7-1j-7Q1" kind="presentation" id="rNw-gr-F0f"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ELF-so-bYV"/>
@@ -104,6 +105,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+        <!--Add Product View Controller-->
+        <scene sceneID="iUk-fY-8eU">
+            <objects>
+                <viewController id="lj7-1j-7Q1" customClass="AddProductViewController" customModule="NateChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KCC-Ky-cMM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="S4j-Ki-VRw">
+                                <rect key="frame" x="10" y="20" width="394" height="302"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkP-8h-xPe">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Merchant" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14d-z0-yHM">
+                                        <rect key="frame" x="0.0" y="42" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Obs-V6-OHW">
+                                        <rect key="frame" x="0.0" y="84" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E8w-Gg-CRV">
+                                        <rect key="frame" x="0.0" y="126" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4d-eq-gwT">
+                                        <rect key="frame" x="0.0" y="168" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NdW-Qm-fKg">
+                                        <rect key="frame" x="0.0" y="210" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzi-fZ-UfP">
+                                        <rect key="frame" x="0.0" y="252" width="394" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Nvl-iw-1ck"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="ADD">
+                                            <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addButtonTapped:" destination="lj7-1j-7Q1" eventType="touchUpInside" id="bOD-VF-hxh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="S4j-Ki-VRw" firstAttribute="leading" secondItem="2JL-Vy-H0O" secondAttribute="leading" constant="10" id="4br-no-sUm"/>
+                            <constraint firstItem="S4j-Ki-VRw" firstAttribute="top" secondItem="2JL-Vy-H0O" secondAttribute="top" constant="20" id="HwZ-j9-bUR"/>
+                            <constraint firstItem="2JL-Vy-H0O" firstAttribute="trailing" secondItem="S4j-Ki-VRw" secondAttribute="trailing" constant="10" id="lcj-S9-zti"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2JL-Vy-H0O"/>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="uzi-fZ-UfP" id="yaa-oG-clM"/>
+                        <outlet property="image1Textfield" destination="E8w-Gg-CRV" id="lWD-A6-Scf"/>
+                        <outlet property="image2Textfield" destination="j4d-eq-gwT" id="EZs-1F-ydw"/>
+                        <outlet property="image3Textfield" destination="NdW-Qm-fKg" id="4Dx-Ze-oSj"/>
+                        <outlet property="merchantTextfield" destination="14d-z0-yHM" id="aL2-6z-38o"/>
+                        <outlet property="titleTextfield" destination="PkP-8h-xPe" id="K2d-el-bod"/>
+                        <outlet property="urlTextfield" destination="Obs-V6-OHW" id="KvT-j6-vZq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7A3-pK-0Lz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="587"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="HfV-bG-2U1">
@@ -275,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jv9-XJ-xLz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="955.07246376811599" y="133.92857142857142"/>
+            <point key="canvasLocation" x="958" y="-81"/>
         </scene>
     </scenes>
     <resources>
