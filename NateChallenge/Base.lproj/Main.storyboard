@@ -143,14 +143,14 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nate" translatesAutoresizingMaskIntoConstraints="NO" id="L18-iP-38r">
-                                                                <rect key="frame" x="5" y="0.0" width="279" height="272"/>
+                                                                <rect key="frame" x="5" y="5" width="279" height="267"/>
                                                             </imageView>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="L18-iP-38r" firstAttribute="leading" secondItem="ziB-2S-8k8" secondAttribute="leading" constant="5" id="CBf-fo-03c"/>
                                                             <constraint firstAttribute="bottom" secondItem="L18-iP-38r" secondAttribute="bottom" id="FVJ-TW-jHG"/>
                                                             <constraint firstAttribute="trailing" secondItem="L18-iP-38r" secondAttribute="trailing" constant="5" id="RXh-sz-lfy"/>
-                                                            <constraint firstItem="L18-iP-38r" firstAttribute="top" secondItem="ziB-2S-8k8" secondAttribute="top" id="pjY-08-Hfk"/>
+                                                            <constraint firstItem="L18-iP-38r" firstAttribute="top" secondItem="ziB-2S-8k8" secondAttribute="top" constant="5" id="pjY-08-Hfk"/>
                                                         </constraints>
                                                     </collectionViewCellContentView>
                                                     <size key="customSize" width="289" height="272"/>

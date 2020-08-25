@@ -45,9 +45,7 @@ class ProductsViewController: UIViewController {
     
     // MARK: - Helper Methods
     
-    fileprivate func getProducts(pagination: Bool) {
 
-    }
     
     // MARK: - Navigation
     
@@ -60,6 +58,44 @@ class ProductsViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func addProductTapped(_ sender: Any) {
+        
+        let baseURL = URL(string: "http://192.168.0.14:3000/product/create")!
+
+        var request = URLRequest(url: baseURL)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = """
+        {
+            "title": "Glenns Gin",
+            "images": ["https://images-na.ssl-images-amazon.com/images/I/51dhaObEFuL._AC_SL1000_.jpg"],
+            "url": "https://www.amazon.co.uk/Brockmans-9-OG-001-40-Gin-70-cl/dp/B008HKMK8U?ref_=Oct_s9_apbd_orecs_hd_bw_bN46V5&pf_rd_r=KVNMAT9XQ61YHD4A8G8R&pf_rd_p=5da95452-8b42-5205-9b47-71a46263622f&pf_rd_s=merchandised-search-10&pf_rd_t=BROWSE&pf_rd_i=340834031",
+            "merchant": "Amazon"
+        }
+        """.data(using: .utf8)
+
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                print(error?.localizedDescription as Any)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                let newProduct = try decoder.decode(Product.self, from: data!)
+                
+                DispatchQueue.main.async {
+                    self.products.insert(newProduct, at: 0)
+                    self.collectionView.reloadItems(at: [IndexPath(item: 0, section: 0)])
+                    self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+                }
+                
+                
+            } catch {
+                print(error.localizedDescription as Any)
+            }
+        }.resume()
     }
     
 }

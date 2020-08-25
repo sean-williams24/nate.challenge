@@ -42,7 +42,10 @@ class NetworkClient {
             }
         }.resume()
     }
+    
+//    func addProduct(title: String, )
 }
+
 
 
 
