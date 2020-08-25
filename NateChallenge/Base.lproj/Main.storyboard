@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8oc-JY-sv3">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FYe-zF-8V5">
                                     <size key="itemSize" width="210" height="203"/>
@@ -69,18 +69,35 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gLZ-tI-5ue"/>
                                 </connections>
                             </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBi-e1-a5m">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rTI-qD-wWU"/>
+                                    <barButtonItem systemItem="add" id="7uO-lb-Ekv">
+                                        <color key="tintColor" red="0.67526610659999997" green="0.2331447005" blue="0.60787641999999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="addProductTapped:" destination="BYZ-38-t0r" id="MFb-Aj-Yyr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ELF-so-bYV"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8oc-JY-sv3" secondAttribute="bottom" id="Nvw-9q-ToQ"/>
+                            <constraint firstItem="hBi-e1-a5m" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Dso-20-EsK"/>
+                            <constraint firstItem="hBi-e1-a5m" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Nvw-9q-ToQ"/>
+                            <constraint firstItem="hBi-e1-a5m" firstAttribute="top" secondItem="8oc-JY-sv3" secondAttribute="bottom" id="Qda-z5-Lyb"/>
                             <constraint firstItem="8oc-JY-sv3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b9c-Xc-brE"/>
                             <constraint firstItem="8oc-JY-sv3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fbx-wR-za8"/>
+                            <constraint firstItem="hBi-e1-a5m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ndv-b0-rhh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8oc-JY-sv3" secondAttribute="trailing" id="r3P-xt-73x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="8oc-JY-sv3" id="iwR-GU-9G3"/>
+                        <outlet property="toolbar" destination="hBi-e1-a5m" id="qcr-Wt-xy9"/>
                         <segue destination="6UJ-ef-5iW" kind="presentation" identifier="showDetail" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="2d1-xY-PiK"/>
                     </connections>
                 </viewController>

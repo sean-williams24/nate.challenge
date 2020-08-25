@@ -14,6 +14,7 @@ class ProductsViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var toolbar: UIToolbar!
     
     
     // MARK: - Properties
@@ -26,23 +27,21 @@ class ProductsViewController: UIViewController {
     
     // MARK: - Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    fileprivate func getAllProducts() {
         let baseURL = URL(string: "http://192.168.0.14:3000/products")
         var request = URLRequest(url: baseURL!)
         request.httpMethod = "POST"
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.httpBody = """
-//        {
-//            "where": {
-//                "title": {
-//                    "contains": ""
-//                }
-//            }
-//        }
-//        """.data(using: .utf8)
-
+        //        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        //        request.httpBody = """
+        //        {
+        //            "where": {
+        //                "title": {
+        //                    "contains": ""
+        //                }
+        //            }
+        //        }
+        //        """.data(using: .utf8)
+        
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else {
@@ -54,20 +53,30 @@ class ProductsViewController: UIViewController {
             
             do {
                 let result = try decoder.decode(Posts.self, from: data!)
-                self.products = result.posts
+                self.products.append(contentsOf: result.posts)
                 
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
-                
             } catch {
                 print(error.localizedDescription as Any)
             }
-            
         }.resume()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        getAllProducts()
+ 
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
         
-        
-        
+        if position > collectionView.contentSize.height - scrollView.frame.size.height + toolbar.frame.height - 100{
+            getAllProducts()
+        }
     }
     
     // MARK: - Navigation
@@ -77,6 +86,11 @@ class ProductsViewController: UIViewController {
         vc.product = product
     }
 
+    
+    // MARK: - Actions
+
+    @IBAction func addProductTapped(_ sender: Any) {
+    }
     
 }
 
