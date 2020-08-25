@@ -11,10 +11,10 @@ import Foundation
 class NetworkClient {
     
     var isPaginating = false
+    let baseURL = URL(string: "http://192.168.0.14:3000/products")!
     
     func getAllProducts(pagination: Bool = false, completion: @escaping ([Product]) -> ()) {
-        let baseURL = URL(string: "http://192.168.0.14:3000/products")
-        var request = URLRequest(url: baseURL!)
+        var request = URLRequest(url: baseURL)
         request.httpMethod = "POST"
 
         if pagination {
@@ -32,6 +32,7 @@ class NetworkClient {
             do {
                 let result = try decoder.decode(Posts.self, from: data!)
                 completion(result.posts)
+                
                 if pagination {
                     self.isPaginating = false
                 }
