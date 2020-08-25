@@ -23,60 +23,30 @@ class ProductsViewController: UIViewController {
     let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
     let itemsPerRow: CGFloat = 2.0
     var product: Product!
+    private let client = NetworkClient()
     
     
     // MARK: - Life Cycle
-
-    fileprivate func getAllProducts() {
-        let baseURL = URL(string: "http://192.168.0.14:3000/products")
-        var request = URLRequest(url: baseURL!)
-        request.httpMethod = "POST"
-        //        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        //        request.httpBody = """
-        //        {
-        //            "where": {
-        //                "title": {
-        //                    "contains": ""
-        //                }
-        //            }
-        //        }
-        //        """.data(using: .utf8)
-        
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard error == nil else {
-                print(error?.localizedDescription as Any)
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            
-            do {
-                let result = try decoder.decode(Posts.self, from: data!)
-                self.products.append(contentsOf: result.posts)
-                
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            } catch {
-                print(error.localizedDescription as Any)
-            }
-        }.resume()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        getAllProducts()
+        client.getAllProducts { newProducts in
+            self.products.append(contentsOf: newProducts)
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
  
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let position = scrollView.contentOffset.y
-        
-        if position > collectionView.contentSize.height - scrollView.frame.size.height + toolbar.frame.height - 100{
-            getAllProducts()
-        }
+    
+    
+    // MARK: - Helper Methods
+    
+    fileprivate func getProducts(pagination: Bool) {
+
     }
     
     // MARK: - Navigation
@@ -140,6 +110,24 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         product = products[indexPath.row]
         performSegue(withIdentifier: "showDetail", sender: self)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        
+        if position > collectionView.contentSize.height - scrollView.frame.size.height + toolbar.frame.height - 100 {
+            guard !client.isPaginating else {
+                return
+            }
+            
+            client.getAllProducts(pagination: true) { newProducts in
+                self.products.append(contentsOf: newProducts)
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
     }
 }
 
