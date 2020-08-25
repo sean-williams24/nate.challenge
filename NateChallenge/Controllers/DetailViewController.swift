@@ -21,8 +21,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var titleTextview: UITextView!
     
     
-    
-    
     // MARK: - Properties
     
     var product: Product!
@@ -30,28 +28,35 @@ class DetailViewController: UIViewController {
 
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         popupView.layer.cornerRadius = 10
         collectionView.layer.cornerRadius = 10
         
         merchantTextview.text = product.merchant
         titleTextview.text = product.title
         
-        if product.images != [] {
+        if product.images == [] || product.images[0] == "none" {
+            images.append(UIImage(named: "nate")!)
+        } else {
             DispatchQueue.global(qos: .background).async {
-                for imageStr in self.product.images {
-                    if let url = URL(string: imageStr) {
+                for var urlStr in self.product.images {
+                    
+                    if urlStr.hasPrefix("//") {
+                        urlStr.insert(contentsOf: "http:", at: urlStr.startIndex)
+                    }
+                    
+                    if let url = URL(string: urlStr) {
                         if let imageData = try? Data(contentsOf: url) {
                             if let image = UIImage(data: imageData) {
                                 self.images.append(image)
                                 DispatchQueue.main.async {
                                     self.collectionView.reloadData()
                                     self.pageControl.numberOfPages = self.images.count
-
-                                 }
+                                    
+                                }
                             }
                         }
                     }
@@ -66,10 +71,23 @@ class DetailViewController: UIViewController {
     }
     
 
+    
+    // MARK: - Actions
+
     @IBAction func dismissPopup(_ sender: Any) {
         dismiss(animated: true)
     }
-
+    
+    
+    @IBAction func visitWebsiteTapped(_ sender: Any) {
+        guard let url = URL(string: product.url) else {
+            print("Invalid URL")
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [.universalLinksOnly: false]) 
+    }
+    
 
 }
 

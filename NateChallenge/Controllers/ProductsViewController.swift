@@ -102,9 +102,14 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
         // Download, set and cache image
         if product.images != [] {
             let processor = DownsamplingImageProcessor(size: CGSize(width: 100, height: 100))
+            var urlStr = product.images[0]
+            
+            if urlStr.hasPrefix("//") {
+                urlStr.insert(contentsOf: "http:", at: urlStr.startIndex)
+            }
             
             cell.imageView.kf.setImage(
-                with: URL(string: product.images[0]),
+                with: URL(string: urlStr),
                 placeholder: UIImage(named: "nate"),
                 options: [
                     .processor(processor),
@@ -112,16 +117,6 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
                     .scaleFactor(UIScreen.main.scale),
                     .cacheOriginalImage
                 ])
-            {
-                result in
-                switch result {
-                case .success:
-                    cell.imageView.contentMode = .scaleAspectFit
-                    print("Success")
-                case .failure(let error):
-                    print("Job failed: \(error.localizedDescription)")
-                }
-            }
         } else {
             cell.imageView.image = UIImage(named: "nate")
         }
