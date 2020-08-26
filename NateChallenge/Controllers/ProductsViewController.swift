@@ -43,7 +43,9 @@ class ProductsViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
-        imageView.animation = "zoomIn"
+        imageView.animation = "slideDown"
+        imageView.rotate = 40
+        imageView.duration = 2
         imageView.alpha = 0
         view.addSubview(imageView)
         
@@ -52,7 +54,15 @@ class ProductsViewController: UIViewController {
         imageView.heightAnchor.constraint(equalToConstant: 68).isActive = true
         imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        imageView.animate()
+
+        imageView.animateNext {
+            imageView.animation = "fall"
+            imageView.animate()
+            
+            UIView.animate(withDuration: 1) {
+                self.collectionView.alpha = 1
+            }
+        }
     
         client.getAllProducts { newProducts in
             self.products.append(contentsOf: newProducts)
