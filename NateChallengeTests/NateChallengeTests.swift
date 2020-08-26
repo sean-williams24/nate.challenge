@@ -14,7 +14,7 @@ class NateChallengeTests: XCTestCase {
     var products: [Product] = []
 
     override func setUpWithError() throws {
-        let iPhone = Product(title: "iPhone XS", merchant: "Apple", url: "Apple.com/store", images: ["apple.com/jpg1", "apple.com/jpg2", "apple.com/jpg3"])
+        let iPhone = Product(title: "iPhone XS", merchant: "Apple", url: "Apple.com/store", images: ["apple.com/jpg1", "apple.com/jpg2", "apple.com/jpg3"], id: "jhdjhdkjhdjd")
         products.append(iPhone)
     }
 
@@ -25,7 +25,4 @@ class NateChallengeTests: XCTestCase {
         XCTAssertEqual(product.merchant, "Apple")
         XCTAssert(product.images.count == 3, "Images does not contain array of 3 Strings")
     }
-
-
-
 }

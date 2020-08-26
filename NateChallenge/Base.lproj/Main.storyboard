@@ -208,7 +208,7 @@
                                     <rect key="frame" x="20" y="150" width="374" height="596"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tiO-fO-gHq">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="444"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="441.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ibE-D8-qdN">
                                                 <size key="itemSize" width="289" height="272"/>
@@ -218,7 +218,7 @@
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="BIV-pW-SHc" customClass="ImageCollectionViewCell" customModule="NateChallenge" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="86" width="289" height="272"/>
+                                                    <rect key="frame" x="0.0" y="85" width="289" height="272"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ziB-2S-8k8">
                                                         <rect key="frame" x="0.0" y="0.0" width="289" height="272"/>
@@ -247,7 +247,7 @@
                                             </connections>
                                         </collectionView>
                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="wIl-5m-LDr">
-                                            <rect key="frame" x="167.5" y="419" width="39" height="0.0"/>
+                                            <rect key="frame" x="167.5" y="416.5" width="39" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="39" id="HQE-xj-Gg6"/>
                                             </constraints>
@@ -255,7 +255,7 @@
                                             <color key="currentPageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </pageControl>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="JFE-O7-U9q">
-                                            <rect key="frame" x="10" y="454" width="354" height="132"/>
+                                            <rect key="frame" x="10" y="451.5" width="354" height="134.5"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QEC-3m-dos">
                                                     <rect key="frame" x="172" y="0.0" width="10" height="50"/>
@@ -283,8 +283,15 @@
                                                         <outlet property="delegate" destination="6UJ-ef-5iW" id="FY1-SX-qhR"/>
                                                     </connections>
                                                 </textView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICD-rw-0xo">
+                                                    <rect key="frame" x="20" y="52" width="314" height="0.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="hQ4-V6-cIw"/>
+                                                    </constraints>
+                                                </view>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lal-Qd-ar0">
-                                                    <rect key="frame" x="172" y="52" width="10" height="50"/>
+                                                    <rect key="frame" x="172" y="54.5" width="10" height="50"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="i3u-0d-Rh6"/>
@@ -297,7 +304,7 @@
                                                     </connections>
                                                 </textView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="LsR-kd-40f">
-                                                    <rect key="frame" x="39" y="104" width="276" height="28"/>
+                                                    <rect key="frame" x="39" y="106.5" width="276" height="28"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpI-C1-vzR">
                                                             <rect key="frame" x="0.0" y="0.0" width="72" height="28"/>
@@ -344,6 +351,10 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ICD-rw-0xo" firstAttribute="leading" secondItem="JFE-O7-U9q" secondAttribute="leading" constant="20" id="hPP-dl-C5U"/>
+                                                <constraint firstAttribute="trailing" secondItem="ICD-rw-0xo" secondAttribute="trailing" constant="20" id="jfR-Wv-rI7"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -411,7 +422,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rNw-gr-F0f"/>
+        <segue reference="DoV-X4-5rI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="nate" width="286" height="130"/>
