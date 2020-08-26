@@ -25,6 +25,8 @@ class DetailViewController: UIViewController {
     
     var product: Product!
     var images = [UIImage]()
+    private let client = NetworkClient()
+    var delegate: ProductsDelegate?
 
     
     // MARK: - Life Cycle
@@ -87,6 +89,23 @@ class DetailViewController: UIViewController {
         
         UIApplication.shared.open(url, options: [.universalLinksOnly: false]) 
     }
+    
+    
+    @IBAction func deleteTapped(_ sender: Any) {
+        client.deleteProduct(id: product.id) { deletedProduct in
+            DispatchQueue.main.async {
+                self.dismiss(animated: true) {
+                    self.delegate?.deleteProduct(deletedProduct: deletedProduct)
+                }
+            }
+        }
+        
+    }
+    
+    
+    @IBAction func editTapped(_ sender: Any) {
+    }
+    
     
 
 }

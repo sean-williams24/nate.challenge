@@ -17,4 +17,5 @@ struct Product: Codable {
     let merchant: String
     let url: String
     let images: [String]
+    let id: String
 }

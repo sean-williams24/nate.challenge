@@ -9,8 +9,9 @@
 import Kingfisher
 import UIKit
 
-protocol AddProduct {
+protocol ProductsDelegate {
     func updateProducts(newProduct: Product)
+    func deleteProduct(deletedProduct: Product)
 }
 
 
@@ -29,6 +30,7 @@ class ProductsViewController: UIViewController {
     let itemsPerRow: CGFloat = 2.0
     var product: Product!
     private let client = NetworkClient()
+    var selectedItem: IndexPath!
     
     
     // MARK: - Life Cycle
@@ -43,7 +45,6 @@ class ProductsViewController: UIViewController {
                 self.collectionView.reloadData()
             }
         }
- 
     }
     
     
@@ -58,6 +59,7 @@ class ProductsViewController: UIViewController {
         if segue.identifier == "showDetail" {
             let vc = segue.destination as! DetailViewController
             vc.product = product
+            vc.delegate = self
         } else {
             let vc = segue.destination as! AddProductViewController
             vc.delegate = self
@@ -122,8 +124,10 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         product = products[indexPath.row]
+        selectedItem = indexPath
         performSegue(withIdentifier: "showDetail", sender: self)
     }
+    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
@@ -167,7 +171,13 @@ extension ProductsViewController: UICollectionViewDelegateFlowLayout {
 }
 
 
-extension ProductsViewController: AddProduct {
+extension ProductsViewController: ProductsDelegate {
+    
+    func deleteProduct(deletedProduct: Product) {
+        products.removeAll(where: {$0.id == deletedProduct.id})
+        collectionView.deleteItems(at: [selectedItem])
+    }
+    
     
     func updateProducts(newProduct: Product) {
         DispatchQueue.main.async {

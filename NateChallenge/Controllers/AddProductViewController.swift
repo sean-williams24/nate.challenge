@@ -20,7 +20,7 @@ class AddProductViewController: UIViewController {
     
     // MARK: - Properties
     
-    var delegate: AddProduct?
+    var delegate: ProductsDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

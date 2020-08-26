@@ -73,8 +73,8 @@
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rTI-qD-wWU"/>
-                                    <barButtonItem systemItem="add" id="7uO-lb-Ekv">
-                                        <color key="tintColor" red="0.67526610659999997" green="0.2331447005" blue="0.60787641999999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <barButtonItem title="Add Product" id="7uO-lb-Ekv">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="addProductTapped:" destination="BYZ-38-t0r" id="MFb-Aj-Yyr"/>
                                             <segue destination="lj7-1j-7Q1" kind="presentation" id="rNw-gr-F0f"/>
@@ -109,7 +109,7 @@
         <!--Add Product View Controller-->
         <scene sceneID="iUk-fY-8eU">
             <objects>
-                <viewController id="lj7-1j-7Q1" customClass="AddProductViewController" customModule="NateChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="lj7-1j-7Q1" customClass="AddProductViewController" customModule="NateChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KCC-Ky-cMM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,7 +154,7 @@
                                             <constraint firstAttribute="height" constant="50" id="Nvl-iw-1ck"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="ADD">
+                                        <state key="normal" title="ADD PRODUCT">
                                             <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         </state>
                                         <connections>
@@ -304,6 +304,9 @@
                                                             <state key="normal" title="Edit">
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="editTapped:" destination="6UJ-ef-5iW" eventType="touchUpInside" id="7rg-nY-7qK"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3t-Gv-cAg">
                                                             <rect key="frame" x="204" y="0.0" width="72" height="28"/>
@@ -311,6 +314,9 @@
                                                             <state key="normal" image="trash" catalog="system">
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="deleteTapped:" destination="6UJ-ef-5iW" eventType="touchUpInside" id="nba-f7-ZFx"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
