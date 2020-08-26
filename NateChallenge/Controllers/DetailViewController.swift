@@ -18,7 +18,7 @@ protocol UpdateProductDetailsDelegate {
 
 class DetailViewController: UIViewController {
     
-    // MARK: - Outputs
+    // MARK: - Outlets
     
     @IBOutlet var visualEfectView: UIVisualEffectView!
     @IBOutlet weak var popupView: UIView!
@@ -48,7 +48,6 @@ class DetailViewController: UIViewController {
         deleteButton.layer.cornerRadius = 10
         
         loadProductDetails()
-        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -80,7 +79,6 @@ class DetailViewController: UIViewController {
                                 DispatchQueue.main.async {
                                     self.collectionView.reloadData()
                                     self.pageControl.numberOfPages = self.images.count
-                                    
                                 }
                             }
                         }
@@ -124,6 +122,7 @@ class DetailViewController: UIViewController {
         deleteButton.animate()
     }
     
+    
     @IBAction func deleteProductTapped(_ sender: Any) {
         client.deleteProduct(id: product.id) { deletedProduct in
             DispatchQueue.main.async {
@@ -134,6 +133,7 @@ class DetailViewController: UIViewController {
         }
     }
 }
+
 
 // MARK: - Collection View Data Source
 
@@ -172,6 +172,8 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+
+// MARK: - Update product delegates
 
 extension DetailViewController: UpdateProductDetailsDelegate {
     

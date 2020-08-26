@@ -39,7 +39,6 @@ class AdjustProductViewController: UIViewController {
         addButton.layer.borderColor = UIColor.black.cgColor
         addButton.layer.cornerRadius = 5
         
-        
         if editingProduct {
             addButton.setTitle("Update Product", for: .normal)
             

@@ -25,7 +25,7 @@ class ProductsViewController: UIViewController {
     
     
     // MARK: - Properties
-
+    
     var products: [Product] = []
     let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
     let itemsPerRow: CGFloat = 2.0
@@ -38,6 +38,8 @@ class ProductsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup hi there image with animation
         
         let imageView = SpringImageView(image: UIImage(named: "hi"))
         imageView.contentMode = .scaleAspectFit
@@ -54,7 +56,7 @@ class ProductsViewController: UIViewController {
         imageView.heightAnchor.constraint(equalToConstant: 68).isActive = true
         imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-
+        
         imageView.animateNext {
             imageView.animation = "fall"
             imageView.animate()
@@ -63,7 +65,9 @@ class ProductsViewController: UIViewController {
                 self.collectionView.alpha = 1
             }
         }
-    
+        
+        // Fetch all products
+        
         client.getAllProducts { newProducts in
             self.products.append(contentsOf: newProducts)
             
@@ -73,11 +77,6 @@ class ProductsViewController: UIViewController {
         }
     }
     
-    
-    
-    // MARK: - Helper Methods
-    
-
     
     // MARK: - Navigation
     
@@ -90,19 +89,7 @@ class ProductsViewController: UIViewController {
             let vc = segue.destination as! AdjustProductViewController
             vc.delegate = self
         }
-    }
-
-    
-    // MARK: - Actions
-
-    @IBAction func addProductTapped(_ sender: Any) {
-        
-        
-        
-        
-
-    }
-    
+    }    
 }
 
 
@@ -123,7 +110,7 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
         if heading.hasPrefix("www.") { heading.removeFirst(4) }
         if heading.hasSuffix(".com") { heading.removeLast(4)}
         cell.titleLabel.text = heading
-
+        
         // Download, set and cache image
         if product.images != [] {
             let processor = DownsamplingImageProcessor(size: CGSize(width: 100, height: 100))
@@ -141,7 +128,7 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
                     .transition(.fade(0.4)),
                     .scaleFactor(UIScreen.main.scale),
                     .cacheOriginalImage
-                ])
+            ])
         } else {
             cell.imageView.image = UIImage(named: "nate")
         }
@@ -153,7 +140,6 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
         selectedItem = indexPath
         performSegue(withIdentifier: "showDetail", sender: self)
     }
-    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
@@ -196,6 +182,8 @@ extension ProductsViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+
+// MARK: - Product Delegates
 
 extension ProductsViewController: ProductsDelegate {
     

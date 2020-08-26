@@ -76,7 +76,6 @@
                                     <barButtonItem title="Add Product" style="plain" id="7uO-lb-Ekv">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <action selector="addProductTapped:" destination="BYZ-38-t0r" id="MFb-Aj-Yyr"/>
                                             <segue destination="lj7-1j-7Q1" kind="presentation" id="rNw-gr-F0f"/>
                                         </connections>
                                     </barButtonItem>
@@ -422,7 +421,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DoV-X4-5rI"/>
+        <segue reference="rNw-gr-F0f"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="nate" width="286" height="130"/>

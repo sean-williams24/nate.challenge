@@ -20,7 +20,7 @@ class NetworkClient {
         let url = URL(string: baseURL + "products")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-
+        
         if pagination {
             isPaginating = true
         }
@@ -39,7 +39,7 @@ class NetworkClient {
                 if pagination {
                     self.isPaginating = false
                 }
-
+                
             } catch {
                 print(error.localizedDescription as Any)
             }
@@ -55,13 +55,13 @@ class NetworkClient {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = """
-        {
+            {
             "title": "\(title)",
             "images": \(images),
             "url": "\(url)",
             "merchant": "\(merchant)"
-        }
-        """.data(using: .utf8)
+            }
+            """.data(using: .utf8)
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else {
@@ -88,14 +88,14 @@ class NetworkClient {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = """
-        {
+            {
             "id": "\(id)",
             "title": "\(title)",
             "images": \(images),
             "url": "\(url)",
             "merchant": "\(merchant)"
-        }
-        """.data(using: .utf8)
+            }
+            """.data(using: .utf8)
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else {
@@ -122,10 +122,10 @@ class NetworkClient {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = """
-        {
+            {
             "id": "\(id)"
-        }
-        """.data(using: .utf8)
+            }
+            """.data(using: .utf8)
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else {
