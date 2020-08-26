@@ -9,6 +9,12 @@
 import Kingfisher
 import UIKit
 
+
+protocol UpdateProductDetailsDelegate {
+    func updateProduct(updatedProduct: Product)
+}
+
+
 class DetailViewController: UIViewController {
     
     // MARK: - Outputs
@@ -37,34 +43,7 @@ class DetailViewController: UIViewController {
         popupView.layer.cornerRadius = 10
         collectionView.layer.cornerRadius = 10
         
-        merchantTextview.text = product.merchant
-        titleTextview.text = product.title
-        
-        if product.images == [] || product.images[0] == "none" {
-            images.append(UIImage(named: "nate")!)
-        } else {
-            DispatchQueue.global(qos: .background).async {
-                for var urlStr in self.product.images {
-                    
-                    if urlStr.hasPrefix("//") {
-                        urlStr.insert(contentsOf: "http:", at: urlStr.startIndex)
-                    }
-                    
-                    if let url = URL(string: urlStr) {
-                        if let imageData = try? Data(contentsOf: url) {
-                            if let image = UIImage(data: imageData) {
-                                self.images.append(image)
-                                DispatchQueue.main.async {
-                                    self.collectionView.reloadData()
-                                    self.pageControl.numberOfPages = self.images.count
-                                    
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        loadProductDetails()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -72,6 +51,50 @@ class DetailViewController: UIViewController {
         pageControl.currentPage = Int(pageIndex)
     }
     
+    
+    // MARK: - Helper Methods
+    
+    fileprivate func loadProductDetails() {
+         merchantTextview.text = product.merchant
+         titleTextview.text = product.title
+         
+         if product.images == [] || product.images[0] == "none" {
+             images.append(UIImage(named: "nate")!)
+         } else {
+             DispatchQueue.global(qos: .background).async {
+                 for var urlStr in self.product.images {
+                     
+                     if urlStr.hasPrefix("//") {
+                         urlStr.insert(contentsOf: "http:", at: urlStr.startIndex)
+                     }
+                     
+                     if let url = URL(string: urlStr) {
+                         if let imageData = try? Data(contentsOf: url) {
+                             if let image = UIImage(data: imageData) {
+                                 self.images.append(image)
+                                 DispatchQueue.main.async {
+                                     self.collectionView.reloadData()
+                                     self.pageControl.numberOfPages = self.images.count
+                                     
+                                 }
+                             }
+                         }
+                     }
+                 }
+             }
+         }
+     }
+    
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! AdjustProductViewController
+        vc.product = product
+        vc.editingProduct = true
+        vc.delegate = delegate
+        vc.updateProductDelegate = self
+    }
 
     
     // MARK: - Actions
@@ -101,13 +124,6 @@ class DetailViewController: UIViewController {
         }
         
     }
-    
-    
-    @IBAction func editTapped(_ sender: Any) {
-    }
-    
-    
-
 }
 
 // MARK: - Collection View Data Source
@@ -120,21 +136,9 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCollectionViewCell
-        
         cell.imageView.image = images[indexPath.row]
-
-        
         return cell
     }
-    
-    
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        product = products[indexPath.row]
-//        performSegue(withIdentifier: "showDetail", sender: self)
-//    }
-    
-
 }
 
 
@@ -156,5 +160,15 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+
+extension DetailViewController: UpdateProductDetailsDelegate {
+    
+    func updateProduct(updatedProduct: Product) {
+        product = updatedProduct
+        images = []
+        loadProductDetails()
     }
 }

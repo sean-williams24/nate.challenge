@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
-        <!--Add Product View Controller-->
+        <!--Adjust Product View Controller-->
         <scene sceneID="iUk-fY-8eU">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="lj7-1j-7Q1" customClass="AddProductViewController" customModule="NateChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="lj7-1j-7Q1" customClass="AdjustProductViewController" customModule="NateChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KCC-Ky-cMM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -305,7 +305,7 @@
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="editTapped:" destination="6UJ-ef-5iW" eventType="touchUpInside" id="7rg-nY-7qK"/>
+                                                                <segue destination="lj7-1j-7Q1" kind="presentation" id="DoV-X4-5rI"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3t-Gv-cAg">
@@ -365,6 +365,9 @@
             <point key="canvasLocation" x="958" y="-81"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DoV-X4-5rI"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="nate" width="286" height="130"/>
         <image name="trash" catalog="system" width="121" height="128"/>

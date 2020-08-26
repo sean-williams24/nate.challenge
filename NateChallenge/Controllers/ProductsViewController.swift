@@ -10,7 +10,7 @@ import Kingfisher
 import UIKit
 
 protocol ProductsDelegate {
-    func updateProducts(newProduct: Product)
+    func updateProducts(newProduct: Product, updating: Bool)
     func deleteProduct(deletedProduct: Product)
 }
 
@@ -61,7 +61,7 @@ class ProductsViewController: UIViewController {
             vc.product = product
             vc.delegate = self
         } else {
-            let vc = segue.destination as! AddProductViewController
+            let vc = segue.destination as! AdjustProductViewController
             vc.delegate = self
         }
     }
@@ -179,13 +179,21 @@ extension ProductsViewController: ProductsDelegate {
     }
     
     
-    func updateProducts(newProduct: Product) {
-        DispatchQueue.main.async {
-            self.products.insert(newProduct, at: 0)
-            self.collectionView.reloadItems(at: [IndexPath(item: 0, section: 0)])
-            self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+    func updateProducts(newProduct: Product, updating: Bool) {
+        if updating {
+            client.getAllProducts { updatedProducts in
+                self.products = updatedProducts
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.products.insert(newProduct, at: 0)
+                self.collectionView.insertItems(at: [IndexPath(item: 0, section: 0)])
+                self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+            }
         }
     }
-    
-    
 }

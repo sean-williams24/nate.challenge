@@ -80,6 +80,40 @@ class NetworkClient {
     }
     
     
+    // Update product
+    
+    func updateProduct(id: String, title: String, images: [String], url: String, merchant: String, completion: @escaping (Product) -> ()) {
+        let addURL = URL(string: baseURL + "product/update")!
+        var request = URLRequest(url: addURL)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = """
+        {
+            "id": "\(id)",
+            "title": "\(title)",
+            "images": \(images),
+            "url": "\(url)",
+            "merchant": "\(merchant)"
+        }
+        """.data(using: .utf8)
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                print(error?.localizedDescription as Any)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                let newProduct = try decoder.decode(Product.self, from: data!)
+                completion(newProduct)
+            } catch {
+                print(error.localizedDescription as Any)
+            }
+        }.resume()
+    }
+    
+    
     // Delete product
     
     func deleteProduct(id: String, completion: @escaping (Product) -> ()) {
