@@ -68,11 +68,11 @@ class ProductsViewController: UIViewController {
         
         // Fetch all products
         
-        client.getAllProducts { newProducts in
-            self.products.append(contentsOf: newProducts)
+        client.getAllProducts { [weak self] newProducts in
+            self?.products.append(contentsOf: newProducts)
             
             DispatchQueue.main.async {
-                self.collectionView.reloadData()
+                self?.collectionView.reloadData()
             }
         }
     }
@@ -192,14 +192,13 @@ extension ProductsViewController: ProductsDelegate {
         collectionView.deleteItems(at: [selectedItem])
     }
     
-    
     func updateProducts(newProduct: Product, updating: Bool) {
         if updating {
-            client.getAllProducts { updatedProducts in
-                self.products = updatedProducts
+            client.getAllProducts { [weak self] updatedProducts in
+                self?.products = updatedProducts
                 
                 DispatchQueue.main.async {
-                    self.collectionView.reloadData()
+                    self?.collectionView.reloadData()
                 }
             }
         } else {

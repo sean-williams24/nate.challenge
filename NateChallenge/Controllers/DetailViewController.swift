@@ -124,10 +124,10 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func deleteProductTapped(_ sender: Any) {
-        client.deleteProduct(id: product.id) { deletedProduct in
+        client.deleteProduct(id: product.id) { [weak self] deletedProduct in
             DispatchQueue.main.async {
-                self.dismiss(animated: true) {
-                    self.delegate?.deleteProduct(deletedProduct: deletedProduct)
+                self?.dismiss(animated: true) {
+                    self?.delegate?.deleteProduct(deletedProduct: deletedProduct)
                 }
             }
         }

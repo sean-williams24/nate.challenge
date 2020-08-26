@@ -88,19 +88,19 @@ class AdjustProductViewController: UIViewController {
         addButton.animate()
         
         if editingProduct {
-            client.updateProduct(id: product.id, title: titleTextfield.text ?? "", images: images, url: urlTextfield.text ?? "", merchant: merchantTextfield.text ?? "") { updatedProduct in
+            client.updateProduct(id: product.id, title: titleTextfield.text ?? "", images: images, url: urlTextfield.text ?? "", merchant: merchantTextfield.text ?? "") { [weak self] updatedProduct in
                 DispatchQueue.main.async {
-                    self.dismiss(animated: true) {
-                        self.updateProductDelegate?.updateProduct(updatedProduct: updatedProduct)
-                        self.delegate?.updateProducts(newProduct: updatedProduct, updating: true)
+                    self?.dismiss(animated: true) {
+                        self?.updateProductDelegate?.updateProduct(updatedProduct: updatedProduct)
+                        self?.delegate?.updateProducts(newProduct: updatedProduct, updating: true)
                     }
                 }
             }
         } else {
-            client.addProduct(title: titleTextfield.text ?? "", images: images, url: urlTextfield.text ?? "", merchant: merchantTextfield.text ?? "") {  newProduct in
+            client.addProduct(title: titleTextfield.text ?? "", images: images, url: urlTextfield.text ?? "", merchant: merchantTextfield.text ?? "") { [weak self] newProduct in
                 DispatchQueue.main.async {
-                    self.dismiss(animated: true) {
-                        self.delegate?.updateProducts(newProduct: newProduct, updating: false)
+                    self?.dismiss(animated: true) {
+                        self?.delegate?.updateProducts(newProduct: newProduct, updating: false)
                     }
                 }
             }
