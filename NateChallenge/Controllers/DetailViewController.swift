@@ -7,6 +7,7 @@
 //
 
 import Kingfisher
+import Spring
 import UIKit
 
 
@@ -25,6 +26,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var merchantTextview: UITextView!
     @IBOutlet weak var titleTextview: UITextView!
+    @IBOutlet weak var deleteButton: SpringButton!
+    @IBOutlet weak var trashButton: SpringButton!
     
     
     // MARK: - Properties
@@ -33,7 +36,7 @@ class DetailViewController: UIViewController {
     var images = [UIImage]()
     private let client = NetworkClient()
     var delegate: ProductsDelegate?
-
+    
     
     // MARK: - Life Cycle
     
@@ -42,8 +45,10 @@ class DetailViewController: UIViewController {
         
         popupView.layer.cornerRadius = 10
         collectionView.layer.cornerRadius = 10
+        deleteButton.layer.cornerRadius = 10
         
         loadProductDetails()
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -55,35 +60,35 @@ class DetailViewController: UIViewController {
     // MARK: - Helper Methods
     
     fileprivate func loadProductDetails() {
-         merchantTextview.text = product.merchant
-         titleTextview.text = product.title
-         
-         if product.images == [] || product.images[0] == "none" {
-             images.append(UIImage(named: "nate")!)
-         } else {
-             DispatchQueue.global(qos: .background).async {
-                 for var urlStr in self.product.images {
-                     
-                     if urlStr.hasPrefix("//") {
-                         urlStr.insert(contentsOf: "http:", at: urlStr.startIndex)
-                     }
-                     
-                     if let url = URL(string: urlStr) {
-                         if let imageData = try? Data(contentsOf: url) {
-                             if let image = UIImage(data: imageData) {
-                                 self.images.append(image)
-                                 DispatchQueue.main.async {
-                                     self.collectionView.reloadData()
-                                     self.pageControl.numberOfPages = self.images.count
-                                     
-                                 }
-                             }
-                         }
-                     }
-                 }
-             }
-         }
-     }
+        merchantTextview.text = product.merchant
+        titleTextview.text = product.title
+        
+        if product.images == [] || product.images[0] == "none" {
+            images.append(UIImage(named: "nate")!)
+        } else {
+            DispatchQueue.global(qos: .background).async {
+                for var urlStr in self.product.images {
+                    
+                    if urlStr.hasPrefix("//") {
+                        urlStr.insert(contentsOf: "http:", at: urlStr.startIndex)
+                    }
+                    
+                    if let url = URL(string: urlStr) {
+                        if let imageData = try? Data(contentsOf: url) {
+                            if let image = UIImage(data: imageData) {
+                                self.images.append(image)
+                                DispatchQueue.main.async {
+                                    self.collectionView.reloadData()
+                                    self.pageControl.numberOfPages = self.images.count
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     
     // MARK: - Navigation
@@ -95,10 +100,10 @@ class DetailViewController: UIViewController {
         vc.delegate = delegate
         vc.updateProductDelegate = self
     }
-
+    
     
     // MARK: - Actions
-
+    
     @IBAction func dismissPopup(_ sender: Any) {
         dismiss(animated: true)
     }
@@ -115,6 +120,11 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func deleteTapped(_ sender: Any) {
+        trashButton.animate()
+        deleteButton.animate()
+    }
+    
+    @IBAction func deleteProductTapped(_ sender: Any) {
         client.deleteProduct(id: product.id) { deletedProduct in
             DispatchQueue.main.async {
                 self.dismiss(animated: true) {
@@ -122,7 +132,6 @@ class DetailViewController: UIViewController {
                 }
             }
         }
-        
     }
 }
 

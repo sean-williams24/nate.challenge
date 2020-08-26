@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8oc-JY-sv3">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.20000000000000001" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8oc-JY-sv3">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FYe-zF-8V5">
@@ -147,15 +147,15 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzi-fZ-UfP">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzi-fZ-UfP" customClass="SpringButton" customModule="Spring">
                                         <rect key="frame" x="0.0" y="252" width="394" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Nvl-iw-1ck"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="ADD PRODUCT">
-                                            <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="addButtonTapped:" destination="lj7-1j-7Q1" eventType="touchUpInside" id="bOD-VF-hxh"/>
@@ -265,6 +265,19 @@
                                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rotate">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="x">
+                                                            <real key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="delegate" destination="6UJ-ef-5iW" id="FY1-SX-qhR"/>
                                                     </connections>
@@ -308,12 +321,21 @@
                                                                 <segue destination="lj7-1j-7Q1" kind="presentation" id="DoV-X4-5rI"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3t-Gv-cAg">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3t-Gv-cAg" customClass="SpringButton" customModule="Spring">
                                                             <rect key="frame" x="204" y="0.0" width="72" height="28"/>
                                                             <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="trash" catalog="system">
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
                                                             </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="animation" value="flash"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="repeatCount">
+                                                                    <real key="value" value="200"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="scaleX">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="deleteTapped:" destination="6UJ-ef-5iW" eventType="touchUpInside" id="nba-f7-ZFx"/>
                                                             </connections>
@@ -336,13 +358,33 @@
                                         <constraint firstAttribute="bottom" secondItem="JFE-O7-U9q" secondAttribute="bottom" constant="10" id="xqG-RX-17T"/>
                                     </constraints>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98b-9R-npF" customClass="SpringButton" customModule="Spring">
+                                    <rect key="frame" x="20" y="766" width="374" height="50"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="Xal-1j-T6G"/>
+                                    </constraints>
+                                    <state key="normal" title="Delete Product?">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideUp"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="deleteProductTapped:" destination="6UJ-ef-5iW" eventType="touchUpInside" id="Ae0-d0-GPe"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Ogw-u1-RHQ" secondAttribute="bottom" id="0Kv-M9-OIA"/>
                                 <constraint firstAttribute="trailing" secondItem="g6B-EB-ivq" secondAttribute="trailing" constant="20" id="IFP-mq-HGm"/>
+                                <constraint firstItem="98b-9R-npF" firstAttribute="top" secondItem="g6B-EB-ivq" secondAttribute="bottom" constant="20" id="L0G-bn-OBi"/>
+                                <constraint firstItem="98b-9R-npF" firstAttribute="width" secondItem="g6B-EB-ivq" secondAttribute="width" id="T2c-T4-mUA"/>
                                 <constraint firstAttribute="bottom" secondItem="g6B-EB-ivq" secondAttribute="bottom" constant="150" id="YyK-Fc-2Uk"/>
                                 <constraint firstAttribute="trailing" secondItem="Ogw-u1-RHQ" secondAttribute="trailing" id="bW3-QY-7EZ"/>
                                 <constraint firstItem="Ogw-u1-RHQ" firstAttribute="leading" secondItem="XKu-5z-FaC" secondAttribute="leading" id="hoB-db-vr2"/>
+                                <constraint firstItem="98b-9R-npF" firstAttribute="centerX" secondItem="Ogw-u1-RHQ" secondAttribute="centerX" id="ovH-ok-rgD"/>
                                 <constraint firstItem="Ogw-u1-RHQ" firstAttribute="top" secondItem="XKu-5z-FaC" secondAttribute="top" id="rtj-lU-e4d"/>
                                 <constraint firstItem="g6B-EB-ivq" firstAttribute="leading" secondItem="XKu-5z-FaC" secondAttribute="leading" constant="20" id="tHM-9H-9Dc"/>
                                 <constraint firstItem="g6B-EB-ivq" firstAttribute="top" secondItem="XKu-5z-FaC" secondAttribute="top" constant="150" id="tMX-mR-DUh"/>
@@ -353,20 +395,22 @@
                     <navigationItem key="navigationItem" id="zOF-zK-xJL"/>
                     <connections>
                         <outlet property="collectionView" destination="tiO-fO-gHq" id="8nf-nD-nKE"/>
+                        <outlet property="deleteButton" destination="98b-9R-npF" id="yGK-gZ-cwk"/>
                         <outlet property="merchantTextview" destination="QEC-3m-dos" id="TK0-Rr-qqD"/>
                         <outlet property="pageControl" destination="wIl-5m-LDr" id="Q6r-Gr-TPy"/>
                         <outlet property="popupView" destination="g6B-EB-ivq" id="tCB-BX-VD4"/>
                         <outlet property="titleTextview" destination="lal-Qd-ar0" id="5Fo-zj-Qqe"/>
+                        <outlet property="trashButton" destination="H3t-Gv-cAg" id="eZf-XW-3zw"/>
                         <outlet property="visualEfectView" destination="8H4-Wz-jik" id="25R-MO-03S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jv9-XJ-xLz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="-81"/>
+            <point key="canvasLocation" x="957.97101449275374" y="-81.026785714285708"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DoV-X4-5rI"/>
+        <segue reference="rNw-gr-F0f"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="nate" width="286" height="130"/>

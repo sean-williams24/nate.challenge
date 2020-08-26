@@ -8,6 +8,7 @@ target 'NateChallenge' do
   # Pods for NateChallenge
 
   pod 'Kingfisher', '~> 5.0'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 
 
   target 'NateChallengeTests' do

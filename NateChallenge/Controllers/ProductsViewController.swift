@@ -7,6 +7,7 @@
 //
 
 import Kingfisher
+import Spring
 import UIKit
 
 protocol ProductsDelegate {
@@ -37,6 +38,21 @@ class ProductsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let imageView = SpringImageView(image: UIImage(named: "hi"))
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 10
+        imageView.layer.masksToBounds = true
+        imageView.animation = "zoomIn"
+        imageView.alpha = 0
+        view.addSubview(imageView)
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.widthAnchor.constraint(equalToConstant: 280).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 68).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        imageView.animate()
     
         client.getAllProducts { newProducts in
             self.products.append(contentsOf: newProducts)

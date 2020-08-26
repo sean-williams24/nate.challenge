@@ -2,17 +2,29 @@ PODS:
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
+  - Spring (1.0.6)
 
 DEPENDENCIES:
   - Kingfisher (~> 5.0)
+  - Spring (from `https://github.com/MengTo/Spring.git`)
 
 SPEC REPOS:
   trunk:
     - Kingfisher
 
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
+    :git: https://github.com/MengTo/Spring.git
+
 SPEC CHECKSUMS:
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
 
-PODFILE CHECKSUM: 8c54e53533c3002fa24915e19d1cbf4b125da3c4
+PODFILE CHECKSUM: 5f59af3c524275f788a7da6fffc17495c3b19c19
 
 COCOAPODS: 1.9.3

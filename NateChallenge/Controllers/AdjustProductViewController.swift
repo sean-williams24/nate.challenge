@@ -6,13 +6,14 @@
 //  Copyright © 2020 Sean Williams. All rights reserved.
 //
 
+import Spring
 import UIKit
 
 class AdjustProductViewController: UIViewController {
 
     // MARK: - Outlets
 
-    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var addButton: SpringButton!
     @IBOutlet weak var titleTextfield: UITextField!
     @IBOutlet weak var merchantTextfield: UITextField!
     @IBOutlet weak var urlTextfield: UITextField!
@@ -37,6 +38,7 @@ class AdjustProductViewController: UIViewController {
         addButton.layer.borderWidth = 0.5
         addButton.layer.borderColor = UIColor.black.cgColor
         addButton.layer.cornerRadius = 5
+        
         
         if editingProduct {
             addButton.setTitle("Update Product", for: .normal)
@@ -64,6 +66,8 @@ class AdjustProductViewController: UIViewController {
     
     @IBAction func addButtonTapped(_ sender: Any) {
         guard !titleTextfield.text!.isEmpty else {
+            addButton.animation = "wobble"
+            addButton.animate()
             return
         }
         
@@ -80,7 +84,9 @@ class AdjustProductViewController: UIViewController {
         if !image3Textfield.text!.isEmpty {
             images.append(image1Textfield.text!)
         }
- 
+        
+        addButton.animation = "zoomOut"
+        addButton.animate()
         
         if editingProduct {
             client.updateProduct(id: product.id, title: titleTextfield.text ?? "", images: images, url: urlTextfield.text ?? "", merchant: merchantTextfield.text ?? "") { updatedProduct in
